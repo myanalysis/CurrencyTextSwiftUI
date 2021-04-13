@@ -20,7 +20,7 @@ import Combine
 struct ContentView: View {
     
     @ObservedObject var vm = ContentViewModel()
-     
+    
     static var currencyFormatter: CurrencyFormatter = .init()
     static let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -47,7 +47,7 @@ struct ContentView: View {
                         
                         $0.maxValue = 9999999
                         $0.minValue = -999999
-                        $0.showCurrencySymbol = false
+                        $0.showCurrencySymbol = true
                         $0.currency = .dollar
                         $0.locale = CurrencyLocale.englishUnitedStates
                         $0.hasDecimals = true
@@ -66,18 +66,22 @@ struct ContentView: View {
             )
             .multilineTextAlignment(.trailing)
             
-            Text("Formatted value: \(String(describing: vm.currency_value))")
-            Text("UnformattedText value: \(String(describing: vm.unformattedText))")
-            Text("Input amount: \(String(describing: vm.value))")
-            
-            Spacer()
-            
+            VStack(spacing: 10) {
+                Text("Formatted value: \(String(describing: vm.currency_value))")
+                Text("UnformattedText value: \(String(describing: vm.unformattedText))")
+                Text("Input amount: \(String(describing: vm.value))")
+            }.padding()
+             
             Button(action: {
                 self.vm.submitButton()
             }) {
                 Text("Button")
-            }
+            }.padding(20)
             
+            Link("Go to GitHub Page", destination: URL(string: "https://github.com/marinofelipe/CurrencyText")!)
+                .padding()
+                .foregroundColor(.orange)
+ 
             Spacer()
             
         }
