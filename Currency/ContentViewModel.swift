@@ -13,7 +13,7 @@ class ContentViewModel:ObservableObject {
     
     @Published var value:Decimal?
     
-    var currency_value: String?  = "$100.00"
+    var currency_value: String?  
     var unformattedText: String?
     
     init(){

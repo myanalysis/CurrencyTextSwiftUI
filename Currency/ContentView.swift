@@ -29,6 +29,8 @@ struct ContentView: View {
     
     var body: some View {
         
+        NavigationView {
+        
         VStack(alignment: .center) {
             
             Spacer()
@@ -57,38 +59,48 @@ struct ContentView: View {
                 )
             )
             .frame(
-                maxWidth: 300
+                width: 200
             )
             .keyboardType(.numbersAndPunctuation)
             .fixedSize()
             .textFieldStyle(
                 RoundedBorderTextFieldStyle()
             )
-            .multilineTextAlignment(.trailing)
+            .multilineTextAlignment(.center)
             
             VStack(spacing: 10) {
                 Text("Formatted value: \(String(describing: vm.currency_value))")
                 Text("UnformattedText value: \(String(describing: vm.unformattedText))")
                 Text("Input amount: \(String(describing: vm.value))")
             }.padding()
+            .font(.callout)
              
             Button(action: {
                 self.vm.submitButton()
             }) {
                 Text("Button")
-            }.padding(20)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .padding(8)
+                    .padding(.horizontal, 50)
+                    .background(Color.purple)
+                    .cornerRadius(50)
+            }.padding(.top, 20)
+            
             
             Link("Go to GitHub Page", destination: URL(string: "https://github.com/marinofelipe/CurrencyText")!)
                 .padding()
                 .foregroundColor(.orange)
+                .padding(.top, 20)
  
             Spacer()
             
         }
-        .navigationTitle("SwiftUI")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("CurrencyTextSwiftUI")
         .contentShape(Rectangle()) // makes the whole view area tappable
         .onTapGesture(perform: endEditing)
+            
+        }
     }
     
 }
