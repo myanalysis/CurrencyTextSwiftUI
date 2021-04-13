@@ -30,75 +30,75 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView {
-        
-        VStack(alignment: .center) {
             
-            Spacer()
-            
-            CurrencyTextField(
-                configuration: .init(
-                    placeholder: "Play with me...",
-                    text: self.$vm.currency_value,
-                    unformattedText: $vm.unformattedText,
-                    inputAmount: $vm.value,
-                    onCommitHandler: nil,
-                    onEditingChangedHandler: nil
-                ),
-                formatter: CurrencyTextFieldFormatter(
-                    formatter: CurrencyFormatter {
-                        
-                        $0.maxValue = 9999999
-                        $0.minValue = -999999
-                        $0.showCurrencySymbol = true
-                        $0.currency = .dollar
-                        $0.locale = CurrencyLocale.englishUnitedStates
-                        $0.hasDecimals = true
-                        
-                    },
-                    clearsWhenValueIsZero: true
+            VStack(alignment: .center) {
+                 
+                
+                CurrencyTextField(
+                    configuration: .init(
+                        placeholder: "Play with me...",
+                        text: self.$vm.currency_value,
+                        unformattedText: $vm.unformattedText,
+                        inputAmount: $vm.value,
+                        onCommitHandler: nil,
+                        onEditingChangedHandler: nil
+                    ),
+                    formatter: CurrencyTextFieldFormatter(
+                        formatter: CurrencyFormatter {
+                            
+                            $0.maxValue = 9999999
+                            $0.minValue = -999999
+                            $0.showCurrencySymbol = true
+                            $0.currency = .dollar
+                            $0.locale = CurrencyLocale.englishUnitedStates
+                            $0.hasDecimals = true
+                            
+                        },
+                        clearsWhenValueIsZero: true
+                    )
                 )
-            )
-            .frame(
-                width: 200
-            )
-            .keyboardType(.numbersAndPunctuation)
-            .fixedSize()
-            .textFieldStyle(
-                RoundedBorderTextFieldStyle()
-            )
-            .multilineTextAlignment(.center)
-            
-            VStack(spacing: 10) {
-                Text("Formatted value: \(String(describing: vm.currency_value))")
-                Text("UnformattedText value: \(String(describing: vm.unformattedText))")
-                Text("Input amount: \(String(describing: vm.value))")
-            }.padding()
-            .font(.callout)
-             
-            Button(action: {
-                self.vm.submitButton()
-            }) {
-                Text("Button")
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .padding(8)
-                    .padding(.horizontal, 50)
-                    .background(Color.purple)
-                    .cornerRadius(50)
-            }.padding(.top, 20)
-            
-            
-            Link("Go to GitHub Page", destination: URL(string: "https://github.com/marinofelipe/CurrencyText")!)
-                .padding()
-                .foregroundColor(.orange)
-                .padding(.top, 20)
- 
-            Spacer()
-            
-        }
-        .navigationTitle("CurrencyTextSwiftUI")
-        .contentShape(Rectangle()) // makes the whole view area tappable
-        .onTapGesture(perform: endEditing)
+                .frame(
+                    width: 200
+                )
+                .keyboardType(.numbersAndPunctuation)
+                .fixedSize()
+                .textFieldStyle(
+                    RoundedBorderTextFieldStyle()
+                )
+                .multilineTextAlignment(.center)
+                .padding(.top, 100)
+                
+                VStack(spacing: 10) {
+                    Text("Formatted value: \(String(describing: vm.currency_value))")
+                    Text("UnformattedText value: \(String(describing: vm.unformattedText))")
+                    Text("Input amount: \(String(describing: vm.value))")
+                }.padding()
+                .font(.callout)
+                
+                Button(action: {
+                    self.vm.submitButton()
+                }) {
+                    Text("Button")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .padding(8)
+                        .padding(.horizontal, 50)
+                        .background(Color.purple)
+                        .cornerRadius(50)
+                }.padding(.top, 20)
+                
+                
+                Link("Go to GitHub Page", destination: URL(string: "https://github.com/marinofelipe/CurrencyText")!)
+                    .padding()
+                    .foregroundColor(.orange)
+                    .padding(.top, 20)
+                
+                Spacer()
+                
+            }
+            .navigationTitle("CurrencyTextSwiftUI")
+            .contentShape(Rectangle()) // makes the whole view area tappable
+            .onTapGesture(perform: endEditing)
             
         }
     }
