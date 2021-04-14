@@ -8,20 +8,25 @@
 import Foundation
  
 
+struct CurrencyText {
+     
+    var text: String?
+    var unformatted: String?
+    var input:Decimal?
+    
+}
 
 class ContentViewModel:ObservableObject {
+     
+    @Published var value = CurrencyText()
     
-    @Published var value:Decimal?
-    
-    var currency_value: String?  
-    var unformattedText: String?
+   
     
     init(){
         
     }
-    
-    // convert Decimal to DOuble
-    
+     
+    // convert to Double from decimal
     func decimalConvert (decimal: Decimal) -> Double {
         
         let d = decimal
@@ -37,7 +42,7 @@ class ContentViewModel:ObservableObject {
         
         EntryModel(
             
-            value: decimalConvert( decimal: self.value ?? 0 ) / 100.0
+            value: decimalConvert( decimal: self.value.input ?? 0 ) / 100.0
             
         )
         

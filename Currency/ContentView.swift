@@ -17,6 +17,9 @@ import CurrencyTextField
 
 import Combine
 
+
+
+
 struct ContentView: View {
     
     @ObservedObject var vm = ContentViewModel()
@@ -32,14 +35,16 @@ struct ContentView: View {
         NavigationView {
             
             VStack(alignment: .center) {
+                
+                
                  
                 
                 CurrencyTextField(
                     configuration: .init(
                         placeholder: "Play with me...",
-                        text: self.$vm.currency_value,
-                        unformattedText: $vm.unformattedText,
-                        inputAmount: $vm.value,
+                        text: self.$vm.value.text,
+                        unformattedText: $vm.value.unformatted,
+                        inputAmount: $vm.value.input,
                         onCommitHandler: nil,
                         onEditingChangedHandler: nil
                     ),
@@ -69,9 +74,9 @@ struct ContentView: View {
                 .padding(.top, 100)
                 
                 VStack(spacing: 10) {
-                    Text("Formatted value: \(String(describing: vm.currency_value))")
-                    Text("UnformattedText value: \(String(describing: vm.unformattedText))")
-                    Text("Input amount: \(String(describing: vm.value))")
+                    Text("Formatted value: \(String(describing: vm.value.text))")
+                    Text("UnformattedText value: \(String(describing: vm.value.unformatted))")
+                    Text("Input amount: \(String(describing: vm.value.input))")
                 }.padding()
                 .font(.callout)
                 
