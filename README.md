@@ -5,5 +5,3 @@ A simple MVVM example of the code written by Felipe Lefèvre Marino for SwiftUI 
 https://github.com/marinofelipe/CurrencyText
 
 please note code is still in beta.  will update when is finalized. 
-
-This is worth the wait!!!
