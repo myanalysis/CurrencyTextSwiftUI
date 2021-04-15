@@ -12,37 +12,25 @@ struct CurrencyText {
      
     var text: String?
     var unformatted: String?
-    var input:Decimal?
+    var input:Double?
     
 }
 
 class ContentViewModel:ObservableObject {
      
     @Published var value = CurrencyText()
-    
-   
-    
+     
     init(){
         
     }
-     
-    // convert to Double from decimal
-    func decimalConvert (decimal: Decimal) -> Double {
-        
-        let d = decimal
-        let nsDecimal = NSDecimalNumber(decimal: d)
-        let double = nsDecimal.doubleValue
-        return double
-        
-    }
-    
+   
     // Model Struct
     
     func getEntry() -> EntryModel {
         
         EntryModel(
-            
-            value: decimalConvert( decimal: self.value.input ?? 0 ) / 100.0
+             
+            value:   (self.value.input ?? 0 ) / 100.0
             
         )
         
@@ -53,7 +41,6 @@ class ContentViewModel:ObservableObject {
     func submitButton(){
         
         print(self.value)
-        
         print( getEntry() )
         
     }

@@ -4,21 +4,16 @@
 //
 //  Created by Benson on 4/12/21.
 //
-
-
-
-
+ 
 import SwiftUI
+import Combine
 import CurrencyFormatter
 import CurrencyTextField
 
 // https://github.com/marinofelipe/CurrencyText.git
+// branch:  swif-ui
 // CurrencyTextSwiftUI
-
-import Combine
-
-
-
+  
 
 struct ContentView: View {
     
@@ -35,10 +30,7 @@ struct ContentView: View {
         NavigationView {
             
             VStack(alignment: .center) {
-                
-                
                  
-                
                 CurrencyTextField(
                     configuration: .init(
                         placeholder: "Play with me...",

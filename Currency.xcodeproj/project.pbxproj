@@ -13,7 +13,7 @@
 		4645C10A26242877002D5CF0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645C10926242877002D5CF0 /* ContentView.swift */; };
 		4645C10C26242878002D5CF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4645C10B26242878002D5CF0 /* Assets.xcassets */; };
 		4645C10F26242878002D5CF0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4645C10E26242878002D5CF0 /* Preview Assets.xcassets */; };
-		464AF59C2626671A008F5DF1 /* CurrencyTextSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 464AF59B2626671A008F5DF1 /* CurrencyTextSwiftUI */; };
+		467766BB2628D63100A81D00 /* CurrencyTextSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 467766BA2628D63100A81D00 /* CurrencyTextSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				464AF59C2626671A008F5DF1 /* CurrencyTextSwiftUI in Frameworks */,
+				467766BB2628D63100A81D00 /* CurrencyTextSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +60,8 @@
 			children = (
 				4645C10726242877002D5CF0 /* CurrencyApp.swift */,
 				4645C10926242877002D5CF0 /* ContentView.swift */,
-				4638366426251D9400DB3676 /* EntryModel.swift */,
 				463836612625108000DB3676 /* ContentViewModel.swift */,
+				4638366426251D9400DB3676 /* EntryModel.swift */,
 				4645C10B26242878002D5CF0 /* Assets.xcassets */,
 				4645C11026242878002D5CF0 /* Info.plist */,
 				4645C10D26242878002D5CF0 /* Preview Content */,
@@ -94,7 +94,7 @@
 			);
 			name = Currency;
 			packageProductDependencies = (
-				464AF59B2626671A008F5DF1 /* CurrencyTextSwiftUI */,
+				467766BA2628D63100A81D00 /* CurrencyTextSwiftUI */,
 			);
 			productName = Currency;
 			productReference = 4645C10426242877002D5CF0 /* Currency.app */;
@@ -124,7 +124,7 @@
 			);
 			mainGroup = 4645C0FB26242877002D5CF0;
 			packageReferences = (
-				464AF59A2626671A008F5DF1 /* XCRemoteSwiftPackageReference "CurrencyText" */,
+				467766B92628D63100A81D00 /* XCRemoteSwiftPackageReference "CurrencyText" */,
 			);
 			productRefGroup = 4645C10526242877002D5CF0 /* Products */;
 			projectDirPath = "";
@@ -346,20 +346,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		464AF59A2626671A008F5DF1 /* XCRemoteSwiftPackageReference "CurrencyText" */ = {
+		467766B92628D63100A81D00 /* XCRemoteSwiftPackageReference "CurrencyText" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marinofelipe/CurrencyText.git";
 			requirement = {
-				branch = swiftui;
+				branch = "swift-ui";
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		464AF59B2626671A008F5DF1 /* CurrencyTextSwiftUI */ = {
+		467766BA2628D63100A81D00 /* CurrencyTextSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 464AF59A2626671A008F5DF1 /* XCRemoteSwiftPackageReference "CurrencyText" */;
+			package = 467766B92628D63100A81D00 /* XCRemoteSwiftPackageReference "CurrencyText" */;
 			productName = CurrencyTextSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
